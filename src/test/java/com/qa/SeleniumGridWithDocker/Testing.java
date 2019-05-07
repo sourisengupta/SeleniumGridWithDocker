@@ -1,5 +1,6 @@
 package com.qa.SeleniumGridWithDocker;
 
+import java.net.MalformedURLException;
 import java.sql.Driver;
 
 import org.openqa.selenium.WebDriver;
@@ -17,7 +18,7 @@ public class Testing extends TestBase{
 	
 	
 	@BeforeTest
-	public void init() {
+	public void init() throws MalformedURLException {
 		initApplication();
 	}
 	@AfterTest
