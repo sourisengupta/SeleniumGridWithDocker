@@ -8,23 +8,21 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Testing {
+import com.qa.SeleniumGridWithDocker.testbase.TestBase;
+
+public class Testing extends TestBase{
 	
-	public String url="http://www.google.com";
-	public String browser="";
-	WebDriver driver;
+	
+	//WebDriver driver;
 	
 	
 	@BeforeTest
 	public void init() {
-		System.out.println("@BeforeTest");
-		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\\\Drivers\\\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.get(url);
+		initApplication();
 	}
 	@AfterTest
 	public void tearup() {
-		driver.close();
+		closeApplication();
 	}
 	
 	@Test
